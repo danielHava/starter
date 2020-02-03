@@ -1,0 +1,30 @@
+{
+  "extends": ["standard", "prettier"],
+  "plugins": ["standard", "prettier", "jest"],
+  "env": {
+    "node": true,
+    "mocha": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "globals": {},
+  "rules": {
+    "no-var": "error",
+    "object-shorthand": ["error", "properties"],
+    "prefer-const": 2,
+    "generator-star-spacing": 0,
+    "no-return-await": 0,
+    "arrow-parents": 0,
+    "quotes": [
+      2,
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "semi": [2, "always"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  }
+}
