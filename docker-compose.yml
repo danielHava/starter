@@ -1,0 +1,25 @@
+version: "3"
+volumes:
+  stor-postgres:
+    external: true
+  stor-redis:
+    external: true
+services: 
+  postgres: 
+    container_name: postgres
+    image: postgres:latest
+    volumes:
+      - stor-postgres:/var/lib/postgresql/data
+    ports: 
+      - 5432:5432
+    environment: 
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD=dbpassword
+      - POSTGRES_DB=dbname
+  redis: 
+    container_name: redis
+    image: redis:latest
+    volumes:
+      - stor-redis:/data
+    ports: 
+     - '6379:6379'
